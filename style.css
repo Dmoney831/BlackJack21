@@ -1,0 +1,112 @@
+
+body {
+    background-color: rgb(17, 61, 0);
+
+}
+.dealer{
+    border: 5px solid gold;
+    border-radius: 4em ;
+    border-style: groove;
+    /* min-height: 50px; */
+    text-align: center;
+    color: gold;
+    font-family: 'Courier New', Courier, monospace;
+    width: 30%;
+    margin: auto;
+    height: 30%
+}
+.player{
+    align-items: flex-end;
+    border: 5px solid gold;
+    border-radius: 4em ;
+    border-style: groove;
+    /* min-height: 50px; */
+    text-align: center;
+    color: gold;
+    font-family: 'Courier New', Courier, monospace;
+    width: 30%;
+    margin: auto;
+    /* height: 30% */
+}
+#start {
+    background-color: gold;
+    border: 5px;
+    border-radius: 3px;
+    border-color:white;
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 78%;
+}
+#hit {
+    background-color: gold;
+    border: 5px;
+    border-radius: 3px;
+    border-color:white;
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 80%;
+}
+#stay {
+    background-color: gold;
+    border: 5px;
+    border-radius: 3px;
+    border-color:white;
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 35px;
+    font-weight: bold;
+}
+#shuffle {
+    background-color: gold;
+    border: 5px;
+    border-radius: 3px;
+    border-color:white;
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 80%; 
+}
+
+
+
+#playerCard1 {
+    margin-left: 50px;
+    margin-right: -130px;
+}
+#playerCard2 {
+    margin-right: -130px;
+}
+#playerCard3 {
+    margin-right: -130px;
+}
+#playerCard4 {
+    margin-right: -130px;
+}
+#playerCard5 {
+    margin-right: -130px;
+}
+#playerCard6 {
+    margin-right: -130px;
+}
+#playerCard7 {
+    margin-right: -130px;
+}
+#playerCard8 {
+    margin-right: -130px;
+}
+
+#dealerCard1 {
+    margin-left: 50px;
+    margin-right: -130px;
+}
+
+

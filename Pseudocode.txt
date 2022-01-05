@@ -1,0 +1,21 @@
+player(s) joins the table.
+each player has $100 to start. 
+shuffle 6 decks of cards and remove the first card. 
+Deal one card in order (player first!) until everyone gets two cards. 
+Aces = 1 or 11
+Face Cards = 10 
+All other cards have their card's number value. 
+
+
+
+display Dealer's first card.
+
+wireframe user story what functionality is MVP. most simpliest / being hit. incrementality work out the user story. 
+
+Hi Henry,
+My project game is blackjack and MVP is creating a function that draws a card from the deck if user clicks "hit" button.
+Used Balsamiq for wireframes.   
+
+
+
+Ask player to "hit", "stay", "split", "double". 
