@@ -13,7 +13,7 @@ function newDeck () {
             rank: ranks[cardRank], 
             img: `https://deckofcardsapi.com/static/img/${ranks[cardRank]}${suits[cardSuit]}.png`})
         }  
-        // let card = {suit: suits[cardSuit], rank:[cardRank]}
+        
     } return deck;
    
 }    
@@ -88,7 +88,11 @@ startButton.addEventListener('click', function(evt) {
     let playerCard1 = document.createElement("img")
     pCardDiv.appendChild(playerCard1)
     
+    let dCard1 = drawNextCard();
+    console.log(getCardNumericValue())
     dealerCards.push(drawNextCard());
+
+
     console.log(`Player's card: `,playerCards);
     console.log(`Dealer's card: `,dealerCards);
 
@@ -98,15 +102,10 @@ startButton.addEventListener('click', function(evt) {
     console.log(getCardNumericValue(pCard2.rank));
     playerCards.push(pCard1, pCard2);
 
-    
-
     playerCard0.src = playerCards[0].img;
     playerCard1.src = playerCards[1].img;
     dealerCard0.src = dealerCards[0].img;
     startButton.style.display = "none"
-
-
-
 
 })
 
