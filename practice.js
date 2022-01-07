@@ -1,7 +1,7 @@
 // create a deck with 52 cards
 function newDeck () {
     var suits = ['H', 'C', 'D', 'S'];
-    var ranks = ['2','3','4','5','6','7','8','9','0','J','Q','K','A'];
+    var ranks = ['K','A','2','3','4','5','6','7','8','9','0','J','Q'];
     const deck = [];
 
     for (var cardSuit = 0; cardSuit < 4; cardSuit++) {
@@ -26,18 +26,14 @@ function newDeck () {
                     suit: suits[cardSuit],
                     rank: ranks[cardRank], 
                     img: `https://deckofcardsapi.com/static/img/${ranks[cardRank]}${suits[cardSuit]}.png`,
-                    value: cardRank+2
+                    value: cardRank
+                    // hidden: false
                 })
-        // deck.push({
-        //     suit: suits[cardSuit],
-        //     rank: ranks[cardRank], 
-        //     img: `https://deckofcardsapi.com/static/img/${ranks[cardRank]}${suits[cardSuit]}.png`})
             }  
         } 
     } return deck
 }    
-
-console.log(newDeck())
+// console.log(newDeck())
 
 function shuffleDeck(deck) {
     for (var i = 0; i < 52; i++) {
@@ -52,14 +48,9 @@ var cardArray = newDeck();
 shuffleDeck(cardArray);
 // console.log(cardArray);
 
-// let playerCard1 = document.querySelector("#playerCard1")
-// let playerCard2 = document.querySelector("#playerCard2")
-// let dealerCard1 = document.querySelector("#dealerCard1")
-
 function drawNextCard() {
     return cardArray.shift()
     // cardImage.src=cardArray[0].img
-    // cardArray.unshift()
 }
 
 // Button definition
@@ -76,38 +67,45 @@ let dealerHandValue = 0;
 let playerHandValue = 0;
 
 
-// function getCardNumericValue(rank) {
-//     // console.log(rank)
-//     // input = [A,2,3,4,5,6,7,8,9,0,J,Q,K]
-//     // output = [1,2,3,4,5,6,7,8,9,10]
-//     if (rank ==="A" ) {
-//         return 1
-//     } else if (rank === "0" || rank === "J" || rank === "Q" || rank==="K") {
-//         return 10
-//     } else {
-//         return parseInt(rank, 10)
-//     }
-// }
-
-// function drawNextCard() {
-//     return deck.shift();
+// function playerSumValue(){
+//     let playerHandValue = 0;
+//         for (let x = 0; x<playerCards.length; x++) {
+//              playerHandValue += playerCards[x].value
+//         } console.log(playerHandValue)
 // }
 function playerSumValue(){
-    let sum = 0;
+    let currentPlayerScore = 0;
         for (let x = 0; x<playerCards.length; x++) {
-             sum += playerCards[x].value
-        }console.log(playerHandValue)
-        playerHandValue = sum;
-    }
+             currentPlayerScore += playerCards[x].value
+        } 
+        playerHandValue = currentPlayerScore;
+        console.log(playerHandValue)
+}
 
+// var totalPlayerValue = playerSumValue()
+
+function dealerSumValue(){
+    let currentDealerScore = 0;
+    for (let y = 0; y<dealerCards.length; y++) {
+        currentDealerScore += dealerCards[y].value
+    }
+    dealerHandValue = currentDealerScore; 
+    console.log(dealerHandValue)
+}
+// var totalDealerValue = dealerSumValue()
+
+let gameStarted = false;
+let gameOver = false;
+let playerWon = false;
 
 startButton.addEventListener('click', function(evt) {
     evt.preventDefault();
     
     let dCard0 = drawNextCard();
+    let dCard1 = drawNextCard();
     // console.log(getCardNumericValue(dCard0.rank));
     // console.log(getCardNumericValue())
-    dealerCards.push(dCard0);
+    dealerCards.push(dCard0, dCard1);
 
     let pCard0= drawNextCard();
     let pCard1= drawNextCard();
@@ -115,18 +113,19 @@ startButton.addEventListener('click', function(evt) {
     // console.log(getCardNumericValue(pCard1.rank));
     playerCards.push(pCard0, pCard1);
 
+    dealerSumValue()
     playerSumValue()
-    // **********
+    // console.log(totalDealerValue)
+    // console.log(totalPlayerValue)
+   
     
-    // playerHandValue = getCardNumericValue(pCard0.rank) + getCardNumericValue(pCard1.rank);
-    
-
     var dCardDiv = document.querySelector("#dealerCards") // Dealer's faceup card
     let dealerCard0 = document.createElement("img")
     dCardDiv.appendChild(dealerCard0)
-    // playerCards.push(drawNextCard());
-    
-    // dealerHandValue = getCardNumericValue(dCard0.rank);
+    let dealerCard1 = document.createElement("img")
+    dCardDiv.appendChild(dealerCard1)
+        
+   
     // console.log(dealerHandValue)
 
     var pCardDiv = document.querySelector("#playerCards")
@@ -141,67 +140,182 @@ startButton.addEventListener('click', function(evt) {
     playerCard0.src = playerCards[0].img;
     playerCard1.src = playerCards[1].img;
     dealerCard0.src = dealerCards[0].img;
+    dealerCard1.src = dealerCards[1].img;
     startButton.style.display = "none"
-  
+
+    
 })
-console.log(playerHandValue)
+// console.log(playerHandValue)
 
-let dealersTurn = false;
-let playerWon = false;
 
-// var x = 2
+
+let j = 2
 hitButton.addEventListener('click', function(evt) {
     evt.preventDefault();
-    
-    // dealersTurn = false;
-    // playerWon = false;
-    let pCard2 = drawNextCard()
-    playerCards.push(pCard2);
-    console.log(`Player's card: `, playerCards);
+
+    let pCard2 = drawNextCard();
+    playerCards.push(pCard2)
     console.log(`Dealer's card: `, dealerCards);
-    
+    console.log(`Player's card: `, playerCards);
+
     playerSumValue()
 
-    var pCardDiv = document.querySelector("#playerCards")
-    let playerCard2 = document.createElement("img")
-    pCardDiv.appendChild(playerCard2)
-    // playerCardHit = playerCards.
-   
-    playerCard2.src = playerCards[2].img;
-    // var randomNum = Math.floor(Math.random() * playerCards.length)
+    // let totalPlayerValue = playerSumValue()
     
-    // if (x = 2) {
-        // playerCardHit.src=playerCards[0].img;
-        // x += 1
-    // }
-    // playerCardHit.src = pCard3.img
-    // }
-    // console.log(playerCardHit)
-    })
-console.log(playerHandValue)
+    pCardDiv = document.querySelector("#playerCards")
+    let playerCardHit = document.createElement("img")
+    pCardDiv.appendChild(playerCardHit)
+    playerCardHit.src = playerCards[j].img;
+    j += 1
+    
+    
+    if (playerHandValue > 21) {
+        console.log("Player lost!!");
+        startButton.style.display = "block";
+        hitButton.style.display = "none";
+        playerWon = false;
+
+    }
+})
+
+let k = 2
+stayButton.addEventListener("click", function (){
+    hitButton.style.display = "none";
+    startButton.style.display = "block";
+    
+    while(dealerHandValue < 17){
+        let dCard2 = drawNextCard();
+        dealerHandValue = dealerHandValue+dCard2.value;
+        dealerCards.push(dCard2)
+        console.log(`Dealer's card: `, dealerCards);
+        console.log(`Player's card: `, playerCards);
+        // let totalPlayerValue = playerSumValue()
+        
+        dCardDiv = document.querySelector("#dealerCards")
+        let dealerCardHit = document.createElement("img")
+        dCardDiv.appendChild(dealerCardHit)
+        dealerCardHit.src = dealerCards[k].img;
+        k += 1
+        
+        if (dealerHandValue > 21 || dealerHandValue < playerHandValue) {
+            console.log("Player won!!");
+        }
+        if (dealerHandValue <= 21 && dealerHandValue === playerHandValue) {
+            console.log("Push");
+        }
+        if (dealerHandValue <= 21 && dealerHandValue > playerHandValue) {
+            console.log("Player lost....");
+        }
+    }
+    playerSumValue()
+    dealerSumValue()
+
+})
+
+ shuffleButton.addEventListener("click", function (){
+     return location.reload()
+ })
+// while(dealerHand.score() < 17){
+//     countingDealersCards = 0;
+//     dealerHand.hitMe("b");
+// function checkForEndOfGame () {
+//     if (gameOver) {
+//         while (dealerSumValue() < 17 && playerSumValue() <= 21 && dealerSumValue <= 21){
+//             dealerCards.push(drawNextCard());
+//         }
+//     }
+//     if (playerSumValue() > 21) {
+//         playerWon = false;
+//         gameOver = true;
+//     } else if (dealerScore > 21) {
+//         playerWon = true;
+//         gameOver = true;
+//     } else if (gameOver) {
+//         if (playerSumValue() > dealerSumValue()) {
+//             playerWon = true;
+//         } else {
+//             playerWon = false;
+//         }
+//     }
+// }
 
 
 
-// stayButton.addEventListener("click", function (){
-//     // dealersTurn = true
-// })
 
 
 
 
 
 
-// var up = document.getElementById('GFG_UP'); 
-//         up.innerHTML = "Click on the button to add image element"; 
-//         var down = document.getElementById('GFG_DOWN'); 
-          
-//         function GFG_Fun() {
-//             var img = document.createElement('img');
-//             img.src = 
-// 'https://media.geeksforgeeks.org/wp-content/uploads/20190529122828/bs21.png';
-//             document.getElementById('body').appendChild(img);
-//             down.innerHTML = "Image Element Added."; 
-//         } 
+
+
+// function hit() {
+//     if (!gameInProgress)
+//        return;
+//     standButton.disabled = true;
+//     hitButton.disabled = true;
+//     dealCard(playerCards, function() {
+//        var playerTotal = getTotal(playerCards);
+//        if (playerTotal > 21)
+//           endGame(false, "YOU WENT OVER 21!");
+//        else if (playerCards.count == 5)
+//           endGame(true, "You took 5 cards without going over 21.");
+//        else if (playerTotal == 21)
+//           dealersTurnAndEndGame();
+//        else {
+//           message.innerHTML = "You have " + playerTotal + ". Hit or Stand?";
+//           hitButton.disabled = false;
+//           standButton.disabled = false;
+//        }
+//     });
+//  }
+
+
+//  function endGame(win, why) {
+//     if (win)
+//         money += bet;
+//     else
+//         money -= bet;
+//     message.innerHTML = (win ? "Congratulations! You win.  " : "Sorry! You lose.  ") + why + 
+//           (money > 0 ? "<br>Click New Game to play again." : "<br>Looks like you've run out of money!");
+//     standButton.disabled = true;
+//     hitButton.disabled = true;
+//     newGameButton.disabled = true;
+//     gameInProgress = false;
+//     if (dealerCards[2].faceDown) {
+//       dealerCards[2].cardContainer.style.display = "none";
+//       dealerCards[2].setFaceUp();
+//       new Effect.SlideDown(dealerCards[2].cardContainer, { duration: 0.5, queue: "end" });
+//     }
+//     new Effect.Fade(moneyDisplay, {
+//        duration: 0.5,
+//        queue: "end",
+//        afterFinish: function() {
+//            moneyDisplay.innerHTML = "$" + money;
+//            new Effect.Appear(moneyDisplay, {
+//               duration: 0.5,
+//               queue: "end",
+//               afterFinish: function() {
+//                   if (money <= 0) {
+//                        betInput.value = "BUSTED";
+//                        new Effect.Shake(moneyDisplay);
+//                   }
+//                   else {
+//                       if (bet > money)
+//                          betInput.value = money;
+//                       standButton.disabled = true;
+//                       hitButton.disabled = true;
+//                       newGameButton.disabled = false;
+//                       betInput.disabled = false;
+//                   }
+//               }
+//            });
+//        }
+//     });
+// }
+
+
+
 
 
 
@@ -311,31 +425,7 @@ newGameButton.addEventListener("click", function() {
     return deck.shift();
   }
   
-  function getCardNumericValue(card) {
-    switch (card.value) {
-      case "Ace":
-        return 1;
-      case "Two":
-        return 2;
-      case "Three":
-        return 3;
-      case "Four":
-        return 4;
-      case "Five":
-        return 5;
-      case "Six":
-        return 6;
-      case "Seven":
-        return 7;
-      case "Eight":
-        return 8;
-      case "Nine":
-        return 9;
-      default:
-        return 10;
-    }
-  }
-  
+
   function getScore(cardArray) {
     let score = 0;
     let hasAce = false;
