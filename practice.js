@@ -13,7 +13,7 @@ function newDeck () {
                     suit: suits[cardSuit],
                     rank: ranks[cardRank], 
                     img: `https://deckofcardsapi.com/static/img/${ranks[cardRank]}${suits[cardSuit]}.png`,
-                    value: 1
+                    value: 11
                 })                
             } else if (ranks[cardRank] === "0" || ranks[cardRank] === "J" || ranks[cardRank] === "Q" || ranks[cardRank]==="K") {
                 deck.push({
@@ -27,7 +27,6 @@ function newDeck () {
                     rank: ranks[cardRank], 
                     img: `https://deckofcardsapi.com/static/img/${ranks[cardRank]}${suits[cardSuit]}.png`,
                     value: cardRank
-                    // hidden: false
                 })
             }  
         } 
@@ -98,6 +97,18 @@ let gameStarted = false;
 let gameOver = false;
 let playerWon = false;
 
+// function AceValueCheck (){
+//     if (playerHandValue > 21 || dealerHandValue > 21) {
+//         player hand has Ace 
+//         ranks[A][value] === 1
+
+//     }
+// }
+// var dCardDiv = document.querySelector("#dealerCards")
+// let faceDownCard = document.createElement("img")
+// dCardDiv.appendChild(faceDownCard)
+// faceDownCard.src = `https://deckofcardsapi.com/static/img/back.png`
+
 startButton.addEventListener('click', function(evt) {
     evt.preventDefault();
     
@@ -118,14 +129,17 @@ startButton.addEventListener('click', function(evt) {
     // console.log(totalDealerValue)
     // console.log(totalPlayerValue)
    
-    
     var dCardDiv = document.querySelector("#dealerCards") // Dealer's faceup card
     let dealerCard0 = document.createElement("img")
     dCardDiv.appendChild(dealerCard0)
-    let dealerCard1 = document.createElement("img")
-    dCardDiv.appendChild(dealerCard1)
-        
-   
+    // let dealerCard1 = document.createElement("img")
+    // dCardDiv.appendChild(dealerCard1)
+    
+    // dealer's facedown card
+    var dCardDiv = document.querySelector("#dealerCards")
+    let faceDownCard = document.createElement("img")
+    dCardDiv.appendChild(faceDownCard)
+    faceDownCard.src = `https://deckofcardsapi.com/static/img/back.png`
     // console.log(dealerHandValue)
 
     var pCardDiv = document.querySelector("#playerCards")
@@ -140,18 +154,50 @@ startButton.addEventListener('click', function(evt) {
     playerCard0.src = playerCards[0].img;
     playerCard1.src = playerCards[1].img;
     dealerCard0.src = dealerCards[0].img;
-    dealerCard1.src = dealerCards[1].img;
-    startButton.style.display = "none"
+    // dealerCard1.src = dealerCards[1].img;
+    // dealerCard1.style.display = "block";
+    // faceDownCard.style.display = "block";
 
+    if (dealerHandValue === 21) {
+        console.log("💸Sorry... Dealer got Blackjack...💸")
+        hitButton.style.display = "none"
+        stayButton.style.display = "none"
+        faceDownCard.style.display= "none"
+        let dealerCard1 = document.createElement("img")
+        dCardDiv.appendChild(dealerCard1)
+        dealerCard1.src = dealerCards[1].img;
+
+    }
+    if (playerHandValue === 21) {
+        console.log("💵Winner Winner Chicken Dinner!!💵")
+        hitButton.style.display = "none"
+        stayButton.style.display = "none"
+    }
+    startButton.style.display = "none"
     
 })
 // console.log(playerHandValue)
 
+// let faceDownCard = document.createElement("img")
+    
 
 
 let j = 2
 hitButton.addEventListener('click', function(evt) {
     evt.preventDefault();
+    var dCardDiv = document.querySelector("#dealerCards")
+    let faceDownCard = document.createElement("img")
+    dCardDiv.appendChild(faceDownCard)
+    faceDownCard.src = `https://deckofcardsapi.com/static/img/back.png`
+    faceDownCard.style.display = "none"
+
+    var dCardDiv = document.querySelector("#dealerCards")
+    let dealerCard1 = document.createElement("img")
+    dCardDiv.appendChild(dealerCard1)
+    dealerCard1.src = dealerCards[1].img;
+
+
+
 
     let pCard2 = drawNextCard();
     playerCards.push(pCard2)
@@ -159,8 +205,7 @@ hitButton.addEventListener('click', function(evt) {
     console.log(`Player's card: `, playerCards);
 
     playerSumValue()
-
-    // let totalPlayerValue = playerSumValue()
+    dealerSumValue()
     
     pCardDiv = document.querySelector("#playerCards")
     let playerCardHit = document.createElement("img")
@@ -183,6 +228,8 @@ stayButton.addEventListener("click", function (){
     hitButton.style.display = "none";
     startButton.style.display = "block";
     
+    // AceValueCheck ()
+
     while(dealerHandValue < 17){
         let dCard2 = drawNextCard();
         dealerHandValue = dealerHandValue+dCard2.value;
