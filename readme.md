@@ -37,7 +37,9 @@ Using "createElement()" solved that issue, and with "setAttribute()", I was able
 
 website reference: 
 https://deckofcardsapi.com/ // card images
+
 https://freefrontend.com/css-text-effects/ // css font style. 
+
 https://codepen.io/prathkum/pen/dyMPErw // css font style. 
 
 Wireframe
