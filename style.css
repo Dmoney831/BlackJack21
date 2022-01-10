@@ -2,16 +2,9 @@
 
 body {
     background-color: rgb(40, 59, 33);
-    /* background-color: rgb(71, 12, 12); */
-    /* background-color: rgb(81, 80, 77); */
-    /* background-color: rgb(77, 77, 26); */
-    /* background-color: rgb(17, 61, 0); */
-
-    /* background-color: rgb(228, 164, 164); */
 }
 .welcome{
     font-family: 'Poppins', sans-serif;
-    /* text-align: center; */
     font-size: 80px;
     color: gold;
     font-weight: bold;
@@ -20,8 +13,6 @@ body {
     top: 150px;
     transform: translate(-50%, -50%);
     display: block;
-    /* color: #cf1b1b; */
-    /* font-size: 124px; */
     letter-spacing: 8px;
     cursor: pointer;
     width: 100%;
@@ -62,19 +53,15 @@ body {
 .dealer{
     border: 5px gold;
     border-width: 15px;
-    /* border-radius: 4em ; */
     border-style: solid;
-    /* min-height: 50px; */
     text-align: center;
     color: gold;
     font-family: "Inter", sans-serif;
     width: 30%;
-    /* justify-content: center; */
     margin-top: 200px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
-    /* height: 30% */
     align-content: center;
     align-items: center;
     font-size: 50px ;  
@@ -86,9 +73,7 @@ body {
     align-items: flex-end;
     border: 5px solid gold;
     border-width: 15px;
-    /* border-radius: 4em ; */
     border-style: solid;
-    /* min-height: 50px; */
     text-align: center;
     color: gold;
     font-family: "Inter", sans-serif;
@@ -101,7 +86,6 @@ body {
 }
 .gameBoard {
     border: 5px solid gold;
-    /* border: 5px solid rgb(101,67,33); */
     border-width: 15px;
     width: 90%;
     height: 1200px;
@@ -112,18 +96,14 @@ body {
     
 }
 #cardBoard{
-    /* border: 5px solid gold; */
     width: 1400px;
     height: 1000px;
     margin-left: 0%;
-    /* display: flex; */
-
 }
 #dealerCards{
     border: 10px solid gold;
     border-style: double;
     height: 350px;
-    /* width: 1200px; */
     display: flex;
     justify-content: center;
     padding: 5%;
@@ -132,7 +112,6 @@ body {
     border: 10px solid gold;
     border-style: double;
     height: 350px;
-    /* width: 1200px; */
     display: flex;
     justify-content: center;
     padding: 5%;
@@ -145,9 +124,7 @@ body {
 }
 #start {
     background-color: gold;
-    /* border: 5px; */
     border-radius: 3px;
-    /* border-color:white; */
     color: white;
     text-align: center;
     font-family: "Inter", sans-serif;
@@ -168,23 +145,18 @@ body {
 #start:hover {
     color: rgb(40, 59, 33);
     background-color: white;
-    /* top: 10px;
-    left: 10px; */
 }  
 
 
 #hitStay {
     display: flex;
-    /* border: 5px solid gold; */
     flex-direction: row;
     justify-content: center;
     margin-top: 40px;
 }
 #hit {
     background-color: gold;
-    /* border: 5px; */
     border-radius: 3px;
-    /* border-color:white; */
     color: white;
     text-align: center;
     font-family: "Inter", sans-serif;
@@ -200,9 +172,7 @@ body {
 
 #stay {
     background-color: gold;
-    /* border: 5px; */
     border-radius: 3px;
-    /* border-color:white; */
     color: white;
     text-align: center;
     font-family: "Inter", sans-serif;
@@ -218,15 +188,12 @@ body {
 }
 #shuffle {
     background-color: gold;
-    /* border: 5px; */
     border-radius: 3px;
-    /* border-color:white; */
     color: white;
     text-align: center;
     font-family: "Inter", sans-serif;
     font-size: 35px;
     font-weight: bold;
-    /* margin-left: 5px;  */
     margin-top: 40px;
     cursor: pointer;
 }
@@ -250,7 +217,6 @@ body {
     padding-top: 10%;
 }
 #message {
-    /* display: flex; */
     width: 1300px;
     height: 100px;
     background-color: rgb(40, 59, 33);
@@ -266,17 +232,9 @@ body {
     /* margin-bottom: 1%; */
     padding-top:29px;
 }
-img{
-    /* padding-left: -10px; */
-    /* position: relative;
-    justify-content: space-around; */
-    /* left: 20px; */
-    /* left: -100px; */
-}
 img.playerCard0 {
     /* animation: afterCardFlip 0.25s linear; */
     position: relative;
-    /* left: -150px; */
     z-index: 1;
 }
 img.faceDown {
@@ -302,7 +260,6 @@ img.dealerCardHit {
 img.playerCard1 {
     animation: afterCardFlip 0.25s linear;
     position: relative;
-    /* padding-left: -50px; */
     left: -200px;
     z-index: 1;
 }
@@ -310,8 +267,7 @@ img.playerCardHit {
     animation: afterCardFlip 0.25s linear;
     position: relative;
     left: -400px;
-    z-index: 1;
-    
+    z-index: 1;   
 }
 
 @keyframes afterCardFlip {
