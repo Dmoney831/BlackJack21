@@ -67,8 +67,6 @@ let playerPocket = 0;
 let dealerHandValue = 0;
 let playerHandValue = 0;
 
-
-
 function playerSumValue(){
   let currentPlayerScore = 0;
       for (let x = 0; x<playerCards.length; x++) {
@@ -77,7 +75,6 @@ function playerSumValue(){
       playerHandValue = currentPlayerScore;
       console.log(playerHandValue)
 }
-
 // var totalPlayerValue = playerSumValue()
 
 function dealerSumValue(){
@@ -89,12 +86,6 @@ function dealerSumValue(){
   console.log(dealerHandValue)
 }
 // var totalDealerValue = dealerSumValue()
-
-// let gameStarted = false;
-// let gameOver = false;
-// let playerWon = false;
-
-
 
 function playerAceValueCheck (){
     while (playerHandValue > 21 ) {
@@ -124,9 +115,6 @@ function dealerAceValueCheck (){
   }
 }
 
-// startButton.removeEventListener('click', noCard)
-// hitButton.removeEventListener('click', hitcard)
-// stayButton.removeEventListener('click', noCard)
 
 var dCardDiv = document.querySelector("#dealerCards");
 let faceDownCard = document.createElement("img");
@@ -210,8 +198,6 @@ startButton.addEventListener('click', function(evt) {
 // console.log(playerHandValue)
 
 
-  
-
 let j = 2
 hitButton.addEventListener('click', function(evt) {
   evt.preventDefault();
@@ -247,12 +233,10 @@ hitButton.addEventListener('click', function(evt) {
   }
 })
 
+
 let k = 2
 stayButton.addEventListener("click", function (){
-  // hitButton.style.display = "block";
-  // startButton.style.display = "block";
-  
-  
+
   dCardDiv.appendChild(faceDownCard)
   faceDownCard.src = `https://deckofcardsapi.com/static/img/back.png`
   faceDownCard.style.display = "none"
@@ -273,14 +257,14 @@ stayButton.addEventListener("click", function (){
     dealerCards.push(dCard2)
     console.log(`Dealer's card: `, dealerCards);
     console.log(`Player's card: `, playerCards);
-      
+    
     dCardDiv = document.querySelector("#dealerCards")
     let dealerCardHit = document.createElement("img")
     dealerCardHit.setAttribute("class", "dealerCardHit")
     dCardDiv.appendChild(dealerCardHit)
     dealerCardHit.src = dealerCards[k].img;
-    k += 1
-
+    k += 1 
+    
     dealerSumValue()
     playerSumValue()
     dealerAceValueCheck ()
