@@ -8,7 +8,7 @@ Game rule is very simple. There is a deck, 52cards. Two cards are given to playe
 Only one dealer's card is faced up and you can use the dealer's faced-up card to guess your winning chance.
 Player decides either "hit" or "stay". If your hand is over 21 then you lose. But if you stay and dealer's hand is less than your hand or over-21 then you won! 
 
-click here to be a next winner, [here] (https://dmoney831.github.io/BlackJack21/)
+click here to be a next winner, (https://dmoney831.github.io/BlackJack21/)
 
 ## Favorite Function & Biggest Challenges
 If you're a super frest junior software engineer, you cannot agree more. Everything is a challenge. It's been 3 weeks and half since I've learn coding, and very hard to represent with a binary language, and can't even draw a line. 
