@@ -1,113 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
 
 body {
-    background-color: rgb(17, 61, 0);
+    background-color: rgb(40, 59, 33);
+    /* background-color: rgb(71, 12, 12); */
+    /* background-color: rgb(81, 80, 77); */
+    /* background-color: rgb(77, 77, 26); */
+    /* background-color: rgb(17, 61, 0); */
 
+    /* background-color: rgb(228, 164, 164); */
 }
+.welcome{
+    font-family: 'Poppins', sans-serif;
+    /* text-align: center; */
+    font-size: 80px;
+    color: gold;
+    font-weight: bold;
+    position: absolute;
+    left: 70%;
+    top: 150px;
+    transform: translate(-50%, -50%);
+    display: block;
+    /* color: #cf1b1b; */
+    /* font-size: 124px; */
+    letter-spacing: 8px;
+    cursor: pointer;
+    width: 100%;
+    height: 20%;
+}
+.welcome::before {
+    content: "Easy Money, BlackJack!!";
+    position: absolute;
+    color: transparent;
+    background-image: repeating-linear-gradient(45deg, transparent 0, transparent 2px, white 2px, white 4px);
+    -webkit-background-clip: text;
+    top: 0px;
+    left: 0;
+    z-index: -1;
+    transition: 1s;
+}
+.welcome::after {
+    content: "Easy Money, BlackJack!!";
+    position: absolute;
+    color: transparent;
+    background-image: repeating-linear-gradient(
+      135deg, transparent 0, transparent 2px,white 2px, white 4px
+    );
+    -webkit-background-clip: text;
+    top: 0px;
+    left: 0px;
+    transition: 1s;
+}
+.welcome:hover:before {
+    top: 10px;
+    left: 10px;
+}  
+.welcome:hover:after {
+    top: -10px;
+    left: -10px;
+} 
+
 .dealer{
-    border: 5px solid gold;
-    border-radius: 4em ;
-    border-style: groove;
+    border: 5px gold;
+    border-width: 15px;
+    /* border-radius: 4em ; */
+    border-style: solid;
     /* min-height: 50px; */
     text-align: center;
     color: gold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Inter", sans-serif;
     width: 30%;
-    margin: auto;
-    height: 30%
+    /* justify-content: center; */
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    /* height: 30% */
+    align-content: center;
+    align-items: center;
+    font-size: 50px ;  
+	font-weight: 900;
+	text-shadow: 5px 1px rgb(255, 246, 195);
+
 }
 .player{
     align-items: flex-end;
     border: 5px solid gold;
-    border-radius: 4em ;
-    border-style: groove;
+    border-width: 15px;
+    /* border-radius: 4em ; */
+    border-style: solid;
     /* min-height: 50px; */
     text-align: center;
     color: gold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Inter", sans-serif;
     width: 30%;
     margin: auto;
-    /* height: 30% */
+    font-size: 50px ;  
+	font-weight: 900;
+	text-shadow: 5px 1px rgb(255, 246, 195);
+    
+}
+.gameBoard {
+    border: 5px solid gold;
+    /* border: 5px solid rgb(101,67,33); */
+    border-width: 15px;
+    width: 90%;
+    height: 1200px;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: flex;
+    
+}
+#cardBoard{
+    /* border: 5px solid gold; */
+    width: 1400px;
+    height: 1000px;
+    margin-left: 0%;
+    /* display: flex; */
+
+}
+#dealerCards{
+    border: 10px solid gold;
+    border-style: double;
+    height: 350px;
+    /* width: 1200px; */
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+#playerCards{
+    border: 10px solid gold;
+    border-style: double;
+    height: 350px;
+    /* width: 1200px; */
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+#gameButtons{
+    width: 340px;
+    height: 500px;
+    margin-top: 500px;
+    margin-left: 80px
 }
 #start {
     background-color: gold;
-    border: 5px;
+    /* border: 5px; */
     border-radius: 3px;
-    border-color:white;
+    /* border-color:white; */
     color: white;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Inter", sans-serif;
     font-size: 40px;
     font-weight: bold;
-    margin-left: 78%;
+    width: 340px;
+    margin-top: 60px;
+    cursor: pointer;
+}
+#start::before {
+    color: rgb(40, 59, 33);
+    background-color: white;    
+}
+#start::after {
+    color: rgb(40, 59, 33);
+    background-color: white;
+}
+#start:hover {
+    color: rgb(40, 59, 33);
+    background-color: white;
+    /* top: 10px;
+    left: 10px; */
+}  
+
+
+#hitStay {
+    display: flex;
+    /* border: 5px solid gold; */
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
 }
 #hit {
     background-color: gold;
-    border: 5px;
+    /* border: 5px; */
     border-radius: 3px;
-    border-color:white;
+    /* border-color:white; */
     color: white;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Inter", sans-serif;
     font-size: 35px;
     font-weight: bold;
-    margin-left: 80%;
+    width: 150px;
+    cursor: pointer;
 }
+#hit:hover {
+    color: rgb(40, 59, 33);
+    background-color: white;
+}
+
 #stay {
     background-color: gold;
-    border: 5px;
+    /* border: 5px; */
     border-radius: 3px;
-    border-color:white;
+    /* border-color:white; */
     color: white;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Inter", sans-serif;
     font-size: 35px;
     font-weight: bold;
-    margin-left: 80%;
+    margin-left: 10%;
+    width: 150px;
+    cursor: pointer;
+}
+#stay:hover {
+    color: rgb(40, 59, 33);
+    background-color: white;
 }
 #shuffle {
     background-color: gold;
-    border: 5px;
+    /* border: 5px; */
     border-radius: 3px;
-    border-color:white;
+    /* border-color:white; */
     color: white;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Inter", sans-serif;
     font-size: 35px;
     font-weight: bold;
-    margin-left: 80%; 
+    /* margin-left: 5px;  */
+    margin-top: 40px;
+    cursor: pointer;
+}
+#shuffle:hover {
+    color: rgb(40, 59, 33);
+    background-color: white;
+}
+#scoreBoard {
+    width:150px;
+    height:100px;
+    background-color: rgb(40, 59, 33);
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    color: white;
+    border: solid gold;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: 27%;
+    text-justify: auto;
+    font-size: 50px;
+    padding-top: 10%;
+}
+#message {
+    /* display: flex; */
+    width: 1300px;
+    height: 100px;
+    background-color: rgb(40, 59, 33);
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    border: solid gold;
+    border-color: 0.3rem gold;
+    border-radius: 5px;
+    justify-content: flex-end;
+    align-items: center;
+    /* margin-bottom: 1%; */
+    padding-top:29px;
+}
+img{
+    /* padding-left: -10px; */
+    /* position: relative;
+    justify-content: space-around; */
+    /* left: 20px; */
+    /* left: -100px; */
+}
+img.playerCard0 {
+    /* animation: afterCardFlip 0.25s linear; */
+    position: relative;
+    /* left: -150px; */
+    z-index: 1;
+}
+img.faceDown {
+    position: relative;
+    left: -200px;
+    z-index: 1;
+    border-radius: 12px;
+    animation: afterCardFlip 0.25s linear;
+}
+img.dealerCard1 {
+    position: relative;
+    left: -200px;
+    z-index: 1;
+    animation: afterCardFlip 0.25s linear;
+}
+img.dealerCardHit {
+    position: relative;
+    left: -400px;
+    z-index: 1;
+    animation: afterCardFlip 0.25s linear;
+    
+}
+img.playerCard1 {
+    animation: afterCardFlip 0.25s linear;
+    position: relative;
+    /* padding-left: -50px; */
+    left: -200px;
+    z-index: 1;
+}
+img.playerCardHit {
+    animation: afterCardFlip 0.25s linear;
+    position: relative;
+    left: -400px;
+    z-index: 1;
+    
 }
 
-
-
-#playerCard1 {
-    margin-left: 50px;
-    margin-right: -130px;
-}
-#playerCard2 {
-    margin-right: -130px;
-}
-#playerCard3 {
-    margin-right: -130px;
-}
-#playerCard4 {
-    margin-right: -130px;
-}
-#playerCard5 {
-    margin-right: -130px;
-}
-#playerCard6 {
-    margin-right: -130px;
-}
-#playerCard7 {
-    margin-right: -130px;
-}
-#playerCard8 {
-    margin-right: -130px;
-}
-
-#dealerCard1 {
-    margin-left: 50px;
-    margin-right: -130px;
+@keyframes afterCardFlip {
+    0%{width: 1px} 
+    30%{width: 45px} 
+    50%{width: 113px} 
+    80%{width: 158px} 
+    100%{width: 226px} 
 }
 
 
