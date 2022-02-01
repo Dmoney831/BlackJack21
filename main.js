@@ -5,9 +5,7 @@ function newDeck () {
   const deck = [];
 
   for (var cardSuit = 0; cardSuit < 4; cardSuit++) {
-      // console.log(suits[cardSuit]);
       for (var cardRank = 0; cardRank < 13; cardRank++) {
-          // console.log(suits[cardSuit] + ranks[cardRank]);
           if (ranks[cardRank] ==="A" ) {
               deck.push({
                   suit: suits[cardSuit],
@@ -32,7 +30,6 @@ function newDeck () {
       } 
   } return deck
 }    
-// console.log(newDeck())
 
 function shuffleDeck(deck) {
   for (var i = 0; i < 52; i++) {
@@ -45,7 +42,6 @@ function shuffleDeck(deck) {
 
 var cardArray = newDeck();
 shuffleDeck(cardArray);
-// console.log(cardArray);
 
 function drawNextCard() {
   return cardArray.shift()
@@ -153,7 +149,6 @@ startButton.addEventListener('click', function(evt) {
   dCardDiv.appendChild(dealerCard0)
 
   // dealer's facedown card
- 
   dCardDiv.appendChild(faceDownCard)
   faceDownCard.src = `https://deckofcardsapi.com/static/img/back.png`
   
@@ -194,9 +189,6 @@ startButton.addEventListener('click', function(evt) {
   // startButton.style.display = "none"
   
 })
-
-// console.log(playerHandValue)
-
 
 let j = 2
 hitButton.addEventListener('click', function(evt) {
@@ -257,13 +249,14 @@ stayButton.addEventListener("click", function (){
     dealerCards.push(dCard2)
     console.log(`Dealer's card: `, dealerCards);
     console.log(`Player's card: `, playerCards);
-    
-    dCardDiv = document.querySelector("#dealerCards")
-    let dealerCardHit = document.createElement("img")
-    dealerCardHit.setAttribute("class", "dealerCardHit")
-    dCardDiv.appendChild(dealerCardHit)
-    dealerCardHit.src = dealerCards[k].img;
-    k += 1 
+    setTimeout(() => {
+      dCardDiv = document.querySelector("#dealerCards")
+      let dealerCardHit = document.createElement("img")
+      dealerCardHit.setAttribute("class", "dealerCardHit")
+      dCardDiv.appendChild(dealerCardHit)
+      dealerCardHit.src = dealerCards[k].img;
+      k += 1 
+    }, 1000)
     
     dealerSumValue()
     playerSumValue()
@@ -289,4 +282,3 @@ stayButton.addEventListener("click", function (){
 shuffleButton.addEventListener("click", function (){
    return location.reload()
 })
-
