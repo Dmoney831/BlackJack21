@@ -5,12 +5,12 @@ body {
 }
 .welcome{
     font-family: 'Poppins', sans-serif;
-    font-size: 80px;
+    font-size: 5vw;
     color: gold;
     font-weight: bold;
     position: absolute;
-    left: 70%;
-    top: 150px;
+    left: 60%;
+    top: 90px;
     transform: translate(-50%, -50%);
     display: block;
     letter-spacing: 8px;
@@ -88,7 +88,7 @@ body {
     border: 5px solid gold;
     border-width: 15px;
     width: 90%;
-    height: 1200px;
+    height: 700px;
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
@@ -96,31 +96,35 @@ body {
     
 }
 #cardBoard{
-    width: 1400px;
-    height: 1000px;
-    margin-left: 0%;
+    width: 700px;
+    height: 500px;
+    /* margin-left: -400px; */
 }
 #dealerCards{
     border: 10px solid gold;
     border-style: double;
-    height: 350px;
+    height: 150px;
+    width: 550px;
     display: flex;
     justify-content: center;
     padding: 5%;
+    margin-left: 50px;
 }
 #playerCards{
     border: 10px solid gold;
     border-style: double;
-    height: 350px;
+    height: 150px;
+    width: 550px;
     display: flex;
     justify-content: center;
     padding: 5%;
+    margin-left: 50px;
 }
 #gameButtons{
-    width: 340px;
+    width: 280px;
     height: 500px;
-    margin-top: 500px;
-    margin-left: 80px
+    margin-top: 50px;
+    margin-left: 5%;
 }
 #start {
     background-color: gold;
@@ -128,9 +132,9 @@ body {
     color: white;
     text-align: center;
     font-family: "Inter", sans-serif;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
-    width: 340px;
+    width: 260px;
     margin-top: 60px;
     cursor: pointer;
 }
@@ -151,7 +155,6 @@ body {
 #hitStay {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     margin-top: 40px;
 }
 #hit {
@@ -162,7 +165,7 @@ body {
     font-family: "Inter", sans-serif;
     font-size: 35px;
     font-weight: bold;
-    width: 150px;
+    width: 100px;
     cursor: pointer;
 }
 #hit:hover {
@@ -178,8 +181,8 @@ body {
     font-family: "Inter", sans-serif;
     font-size: 35px;
     font-weight: bold;
-    margin-left: 10%;
-    width: 150px;
+    margin-left: 21%;
+    width: 100px;
     cursor: pointer;
 }
 #stay:hover {
@@ -192,7 +195,7 @@ body {
     color: white;
     text-align: center;
     font-family: "Inter", sans-serif;
-    font-size: 35px;
+    font-size: 26px;
     font-weight: bold;
     margin-top: 40px;
     cursor: pointer;
@@ -203,7 +206,7 @@ body {
 }
 #scoreBoard {
     width:150px;
-    height:100px;
+    height:90px;
     background-color: rgb(40, 59, 33);
     text-align: center;
     font-family: "Inter", sans-serif;
@@ -217,12 +220,12 @@ body {
     padding-top: 10%;
 }
 #message {
-    width: 1300px;
-    height: 100px;
+    width: 900px;
+    height: 50px;
     background-color: rgb(40, 59, 33);
     text-align: center;
     font-family: "Inter", sans-serif;
-    font-size: 40px;
+    font-size: 25px;
     color: rgb(255, 255, 255);
     border: solid gold;
     border-color: 0.3rem gold;
@@ -230,52 +233,107 @@ body {
     justify-content: flex-end;
     align-items: center;
     /* margin-bottom: 1%; */
-    padding-top:29px;
+    padding-top:20px;
 }
-img.playerCard0 {
-    /* animation: afterCardFlip 0.25s linear; */
+img.dealerCard0 {
     position: relative;
+    left: 0px;
     z-index: 1;
+    animation: afterCardFlip 0.25s linear;
+    width: 113.355px;
+    height: 157.5px;
 }
 img.faceDown {
     position: relative;
-    left: -200px;
+    left: -90px;
     z-index: 1;
     border-radius: 12px;
     animation: afterCardFlip 0.25s linear;
+    width: 113.355px;
+    height: 157.5px;
 }
 img.dealerCard1 {
     position: relative;
-    left: -200px;
+    left: -90px;
     z-index: 1;
     animation: afterCardFlip 0.25s linear;
+    width: 113.355px;
+    height: 157.5px;
 }
 img.dealerCardHit {
     position: relative;
-    left: -400px;
+    left: -180px;
     z-index: 1;
     animation: afterCardFlip 0.25s linear;
+    width: 113.355px;
+    height: 157.5px;
     
+}
+img.playerCard0 {
+    /* animation: afterCardFlip 0.25s linear; */
+    left: 0px;
+    position: relative;
+    z-index: 1;
+    width: 113.355px;
+    height: 157.5px;
 }
 img.playerCard1 {
     animation: afterCardFlip 0.25s linear;
     position: relative;
-    left: -200px;
+    left: -90px;
     z-index: 1;
+    width: 113.355px;
+    height: 157.5px;
 }
 img.playerCardHit {
     animation: afterCardFlip 0.25s linear;
     position: relative;
-    left: -400px;
-    z-index: 1;   
+    left: -180px;
+    z-index: 1; 
+    width: 113.355px;
+    height: 157.5px;  
 }
 
 @keyframes afterCardFlip {
     0%{width: 1px} 
-    30%{width: 45px} 
-    50%{width: 113px} 
-    80%{width: 158px} 
-    100%{width: 226px} 
+    30%{width: 34.0065px} 
+    50%{width: 56.6775px} 
+    80%{width: 90.684px} 
+    100%{width: 113.355px} 
 }
 
+.footer {
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 5px solid #ffffff;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+.footer ul {
+    font-size: 2vw;
+    color: gold;
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    font-weight: bold;
+}
 
+.footer ul li {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer ul li a {
+    color: white;
+    text-transform: uppercase;
+}
+
+.foot {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+}
